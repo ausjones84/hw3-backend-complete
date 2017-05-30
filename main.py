@@ -17,7 +17,7 @@ class MainPage(webapp2.RequestHandler):
     """
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('CMPS 121 - webapp2 testing server')
+        self.response.write('Brains webapp2 testing server')
 
 
 class GetListPage(webapp2.RequestHandler):
@@ -26,7 +26,13 @@ class GetListPage(webapp2.RequestHandler):
     """
     def get(self):
         self.response.headers['Content-Type'] = 'application/json'
-        self.response.write(json.dumps(dict(cat=4, dog=4, bird=2, spider=8)))
+        self.response.write(json.dumps(dict([ { "id" : 1,
+                                                "avatar_link" : "images/avatars/1.jpg",
+                                                "dob" : "1998-12-03",
+                                                "email" : "ross@teamengine.org",
+                                                "name" : "ross",
+                                                "username" : "jiadar" } ]
+        )))
 
 
 class SendMsgPage(webapp2.RequestHandler):
